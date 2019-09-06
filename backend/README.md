@@ -1,4 +1,4 @@
-# RESTful API Matcha
+# RESTful API Hypertube
 
 #### Note
 All data should be sent to server in JSON file.
