@@ -1,0 +1,39 @@
+
+version: '3.1'
+
+services:
+
+  backend:
+    container_name: flask_hyper
+    build: ./backend
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/usr/src/backend
+    depends_on:
+      - db
+    env_file: .env
+    entrypoint: ["python", "main.py"]
+
+#  client:
+#    container_name: vue
+#    build: ./client
+#    volumes:
+#      - './client:/app/client'
+#      - '/app/client/node_modules'
+#    ports:
+#      - '8080:8080'
+#    depends_on:
+#      - backend
+#    environment:
+#      - VUE_APP_HOST_URL=http://localhost:5000
+
+
+  db:
+    container_name: postgres_hyper
+    image: postgres:latest
+    restart: always
+    env_file: .env
+    expose:
+      - 5432
