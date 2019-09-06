@@ -1,5 +1,6 @@
 # Hypertube
 A streaming service for watching videos through the BitTorrent protocol
+
 Full specification: https://cdn.intra.42.fr/pdf/pdf/1209/hypertube.en.pdf
 
 [Server] Python (Flask)
