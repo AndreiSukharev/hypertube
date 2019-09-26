@@ -6,7 +6,6 @@ import requests
 
 class Search(Base):
 
-    # search video by name
     def get(self):
         data = self.parse_params()
         res = self.check_movies_exist(data)

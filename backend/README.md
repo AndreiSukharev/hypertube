@@ -110,3 +110,14 @@ Note: check key 'msg'. Response variants: ok, error, no movies found
 }
 ```
 
+### Watch
+
+```
+GET     /api/watch/13723
+```
+```
+{
+    
+}
+```
+

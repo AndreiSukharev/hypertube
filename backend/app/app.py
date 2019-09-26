@@ -13,6 +13,8 @@ from .resources.loginPage.SignUp import SignUp
 from .resources.loginPage.SignIn import SignIn
 from .resources.loginPage.LogOut import LogOut
 from app.resources.Videos.Search import Search
+from app.resources.Videos.Watch import Watch
+
 
 #api
 api_bp = Blueprint('api', __name__)
@@ -36,6 +38,8 @@ api.add_resource(Users, '/users')
 api.add_resource(UserId, '/users/<user_id>')
 api.add_resource(Images, '/images/<image_id>')
 api.add_resource(Search, '/search')
+api.add_resource(Watch, '/watch/<movie_id>')
+
 
 
 # token revoke
