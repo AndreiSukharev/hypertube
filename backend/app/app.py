@@ -1,4 +1,4 @@
-from flask import Blueprint, Flask
+from flask import Blueprint, Flask, render_template
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
@@ -19,8 +19,9 @@ api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
 
 #app
-template_dir = os.path.abspath('front_test')
-app = Flask(__name__, template_folder=template_dir)
+# template_dir = os.path.abspath('front_test')
+# app = Flask(__name__, template_folder=template_dir)
+app = Flask(__name__)
 app.config.from_object(Config)
 app.register_blueprint(api_bp, url_prefix='/api')
 app.config.update(mail_settings)
@@ -49,8 +50,8 @@ def check_if_token_in_blacklist(decrypted_token):
     return True
 
 
-# @app.route('/index')
-# def socket():
-#     return render_template('index.html')
-#
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 

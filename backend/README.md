@@ -95,14 +95,18 @@ NOTE: instead of JSON, use FormData
 ### Search
 
 ```
-GET     /api/search?video=titanic -> get video by name
-POST    /api/search -> detailed search video
+GET     /api/search?title=cook&genre=Comedy&minimum_rating=5 -> get video by title, genre or IMBD rating
 ```
 
-Example for POST:
+Note: check key 'msg'. Response variants: ok, error, no movies found
 ```
 {
-    "genre": "fantasy",
-    "year": 2018
+    "msg": "ok",
+    "movies": [
+        {
+        ...
+        }
+     ]
 }
+```
 
