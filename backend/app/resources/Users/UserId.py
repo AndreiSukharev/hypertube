@@ -6,7 +6,7 @@ from flask_jwt_extended import jwt_required
 
 class UserId(UsersCommon):
 
-    @jwt_required
+    # @jwt_required
     def get(self, user_id):
         sql = """
                 SELECT  *
@@ -23,7 +23,7 @@ class UserId(UsersCommon):
         res = self.base_write(sql, record)
         return res
 
-    @jwt_required
+    # @jwt_required
     def put(self, user_id):
         req_params = dict(request.form)
         params = self.__manage_user_params(req_params, user_id)
