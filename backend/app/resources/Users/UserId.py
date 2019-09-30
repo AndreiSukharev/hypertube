@@ -48,7 +48,6 @@ class UserId(UsersCommon):
                 del params[key]
         return params
 
-
     def __write_userdata_to_db(self, params, user_id):
         for key, value in params.items():
             sql = "UPDATE users SET {} = %s WHERE user_id =%s".format(key)

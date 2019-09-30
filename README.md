@@ -53,6 +53,12 @@ npm run serve
 go to: http://localhost:8080
 ```
 
+#### Test
+
+Create test entities:
+```
+docker exec flask_hyper bash -c "python test_entities.py"
+```
 #### Note Docker
 
 Run postgres client:

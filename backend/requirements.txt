@@ -5,7 +5,17 @@ MarkupSafe==1.1.1
 Werkzeug==0.15.4
 psycopg2-binary==2.8.3
 flask_restful==0.3.6
-Flask-Mail
-flask-jwt-extended
-flask-cors
-flask-socketio
+Flask-Mail==0.9.1
+flask-jwt-extended==3.23.0
+flask-cors==3.0.8
+flake8==2.5.4
+coverage==4.1
+bitstring==3.1.5
+aiohttp==2.3.3
+bencode.py==2.1.0
+bcoding==1
+PyPubSub == 3.3.0
+requests >= 2.20.0
+pubsub == 0.1.1
+ipaddress == 1.0.22
+

@@ -8,12 +8,13 @@ import os
 from app.resources.Common.Base import Base
 from app.resources.Users.Users import Users
 from app.resources.Users.UserId import UserId
-from app.resources.Users.Images import Images
 from .resources.loginPage.SignUp import SignUp
 from .resources.loginPage.SignIn import SignIn
 from .resources.loginPage.LogOut import LogOut
 from app.resources.Videos.Search import Search
 from app.resources.Videos.Watch import Watch
+from app.resources.Videos.Comments import Comments
+
 
 
 #api
@@ -36,9 +37,10 @@ api.add_resource(SignIn, '/signin')
 api.add_resource(LogOut, '/logout')
 api.add_resource(Users, '/users')
 api.add_resource(UserId, '/users/<user_id>')
-api.add_resource(Images, '/images/<image_id>')
 api.add_resource(Search, '/search')
-api.add_resource(Watch, '/watch/<movie_id>')
+api.add_resource(Watch, '/watch/<torrent_id>')
+api.add_resource(Comments, '/comments')
+
 
 
 

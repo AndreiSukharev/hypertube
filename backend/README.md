@@ -24,6 +24,19 @@ Example for POST:
     "password": "wertyq123"
 }
  ```
+ Example for POST Oauth:
+```
+{
+    "email": "test@user.ru",
+    "login": "test1",
+    "social_id": "5464rghf65"
+}
+ ```
+ 
+ respone:
+```
+"ok" or "Email or login already exist"
+```
  
  ### Sign In, Forgot Password
 ```
@@ -95,7 +108,7 @@ NOTE: instead of JSON, use FormData
 ### Search
 
 ```
-GET     /api/search?title=cook&genre=Comedy&minimum_rating=5 -> get video by title, genre or IMBD rating
+GET     /api/search?title=titanic&genre=Drama&minimum_rating=5 -> get video by title, genre or IMBD rating
 ```
 
 Note: check key 'msg'. Response variants: ok, error, no movies found
@@ -113,11 +126,36 @@ Note: check key 'msg'. Response variants: ok, error, no movies found
 ### Watch
 
 ```
-GET     /api/watch/13723
+GET     /api/watch/<torrent_id>
 ```
+in response you get src to video
+
+### Comments
+
+```
+GET     /api/comments?video_id=2
+POST    /api/comments
+```
+
+response GET:
 ```
 {
-    
+
 }
 ```
+
+request POST:
+```
+{
+    "author": "Keker",
+    "message": "asdasda",
+    "creation_date": "01.01.2018 15:34",
+    "video_id": 1
+}
+```
+
+Test Videos
+download your video to backend/videos_hub
+add it in backend/test_entities.py in array videos
+
 

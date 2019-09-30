@@ -16,14 +16,34 @@ class SignUp(UsersCommon):
         return "Activated"
 
     def post(self):
+        social_id = request.json.get("social_id")
+        if social_id:
+            res = self.oauth(social_id)
+        else:
+            res = self.ordinary_signup()
+        return res
+
+    def oauth(self, social_id):
+        email = request.json.get('email')
+        login = request.json.get('login')
+        record = (email, login, social_id, "1")
+        sql = '''INSERT INTO users (email, login, social_id, status)
+                         VALUES (%s, %s, %s, %s);'''
+        if self.base_write(sql, record) == "ok":
+            print("signUp oauth")
+            return "ok"
+        print("exists users oauth")
+        return "ok"
+
+    def ordinary_signup(self):
         email = request.json['email']
         login = request.json['login']
         password = self.to_hash(request.json['password'])
-        token = self.to_hash((email+login))
+        token = self.to_hash((email + login))
 
         record = (email, login, password, token)
         sql = '''INSERT INTO users (email, login, password, token)
-                 VALUES (%s, %s, %s, %s);'''
+                         VALUES (%s, %s, %s, %s);'''
         if self.base_write(sql, record) == "ok":
             res = Email.send_email_confirmation(email, login, token)
             return res

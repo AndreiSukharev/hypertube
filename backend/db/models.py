@@ -16,14 +16,14 @@ class Models:
     videos = '''
                     CREATE TABLE IF NOT EXISTS videos(
                     video_id            SERIAL          NOT NULL PRIMARY KEY,
-                    video_name          VARCHAR(64),
+                    torrent_id          INT,
+                    title               VARCHAR(64),
                     subtitles           VARCHAR(1024)   DEFAULT 'false',
-                    format              VARCHAR(64),
-                    genre               VARCHAR (64),
-                    production_year     INT,
-                    grade               INT,
+                    quality              VARCHAR(64),
+                    genres              VARCHAR (64)[],
+                    year               INT,
+                    rating               INT,
                     duration            INT,
-                    casting             TEXT,
                     summary             TEXT
                     );'''
 
@@ -38,8 +38,8 @@ class Models:
                 comment_id      SERIAL          NOT NULL PRIMARY KEY,
                 author          VARCHAR(255)    NOT NULL,
                 message         TEXT            NOT NULL,
-                creation_date   TIMESTAMP       NOT NULL,
-                video_id        INT             REFERENCES users (user_id) ON DELETE CASCADE
+                creation_date   TEXT       NOT NULL,
+                video_id        INT             REFERENCES videos (video_id) ON DELETE CASCADE
                 );
     '''
 

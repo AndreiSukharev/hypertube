@@ -12,7 +12,7 @@ class Email:
                         <p>New Password: {}</p>
                     """.format(password)
         msg = Message(
-            subject="Matcha New Password",
+            subject="HyperTube New Password",
             sender=current_app.config.get("MAIL_USERNAME"),
             recipients=[email],
             html=html
