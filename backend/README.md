@@ -133,7 +133,7 @@ in response you get src to video
 ### Comments
 
 ```
-GET     /api/comments?video_id=2
+GET     /api/comments?video_id=1
 POST    /api/comments
 ```
 

@@ -46,15 +46,15 @@ class Images(Base):
         return new_image
 
     def __save_image_db(self, image):
-        sql = "UPDATE users SET avatar = array_append(avatar, %s) WHERE user_id = %s;"
+        sql = "UPDATE users SET avatar = %s WHERE user_id = %s;"
         record = (image, self.user_id)
         res = self.base_write(sql, record)
         return res
 
     # @jwt_required
-    def delete(self, image_id):
-        user_id = session['user_id']
-        sql = "UPDATE users SET avatar = array_remove(avatar, avatar[%s]) WHERE user_id = %s;"
-        record = (image_id, user_id)
-        res = self.base_write(sql, record)
-        return res
+    # def delete(self, image_id):
+    #     user_id = session['user_id']
+    #     sql = "UPDATE users SET avatar = array_remove(avatar, avatar[%s]) WHERE user_id = %s;"
+    #     record = (image_id, user_id)
+    #     res = self.base_write(sql, record)
+    #     return res
