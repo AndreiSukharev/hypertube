@@ -10,9 +10,10 @@ client/node_modules
 
 # Torrents
 
-backend/videos_hub/
-backend/torrents/
-
+backend/videos_hub/*
+backend/torrents/*
+!backend/torrents/.gitkeep
+!backend/videos_hub/.gitkeep
 # Cache
 backend/__pycache__/
 backend/db/__pycache__/
