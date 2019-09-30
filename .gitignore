@@ -8,6 +8,11 @@
 # Front
 client/node_modules
 
+# Torrents
+
+backend/videos_hub/
+backend/torrents/
+
 # Cache
 backend/__pycache__/
 backend/db/__pycache__/
