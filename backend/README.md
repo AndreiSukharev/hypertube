@@ -139,9 +139,15 @@ POST    /api/comments
 
 response GET:
 ```
-{
-
-}
+[
+    {
+        "comment_id": 1,
+        "author": "Keker",
+        "message": "asdasda",
+        "creation_date": "01.01.2018 15:34",
+        "video_id": 1
+    }
+]
 ```
 
 request POST:
