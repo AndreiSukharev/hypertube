@@ -1,0 +1,39 @@
+.movie-container {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    padding-top: 5%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie-card {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.movie-card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.movie-card-info-poster {
+    margin-right: 4%;
+    height: 40%;
+    width: 25%;
+}
+
+.movie-card-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    outline: none;
+}
